@@ -1,0 +1,20 @@
+{
+  "name": "ona",
+  "version": "1.0.0",
+  "description": "Proyecto Nuevas Tecnologias de desarrollo",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/0xyz2/ONA.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/0xyz2/ONA/issues"
+  },
+  "homepage": "https://github.com/0xyz2/ONA#readme"
+}
