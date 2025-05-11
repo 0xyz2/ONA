@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/0xyz2/ONA/issues"
   },
-  "homepage": "https://github.com/0xyz2/ONA#readme"
+  "homepage": "https://github.com/0xyz2/ONA#readme",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
 }
