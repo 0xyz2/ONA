@@ -9,3 +9,4 @@ router.post("/usuarios", (req, res) => {
     .then((data) => res.json(data))
     .catch((error) => res.status(400).json({ message: error }));
 });
+module.exports = router;
