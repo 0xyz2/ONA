@@ -1,9 +1,9 @@
 const express = require("express");
 const router = express.Router();
-const userSchema = require("../models/publicacion");
+const publicacionSchema = require("../models/publicacion");
 
 router.post("/publicacion", (req, res) => {
-  const user = new userSchema(req.body);
+  const publicacion = new publicacionSchema(req.body);
   user
     .save()
     .then((data) => res.json(data))
