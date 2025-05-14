@@ -9,4 +9,17 @@ router.post("/publicacion", (req, res) => {
     .then((data) => res.json(data))
     .catch((error) => res.status(400).json({ message: error }));
 });
+
+router.delete("/publicacion/:id", (req, res) => {
+    const { id } = req.params;
+    publicacionSchema
+        .findByIdAndDelete(id)
+        .then((data) => {
+            res.json(data);
+        })
+        .catch((error) => {
+            res.json({ message: error });
+        });
+});
+
 module.exports = router;
