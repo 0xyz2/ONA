@@ -7,7 +7,7 @@ const port = process.env.PORT || 3000;
 
 // Importar rutas
 const usuarioRoutes = require('./routes/usuario');
-const reporteRoutes = require("./routes/reporte");
+const reporteRoutes = require("./routes/reportes");
 
 // Middlewares
 app.use(express.json()); // Para leer JSON en las peticiones
