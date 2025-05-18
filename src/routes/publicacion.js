@@ -27,6 +27,17 @@ router.get("/publicaciones", (req, res) => {
         .catch((error) => res.json({ message: error }));
 });
 
+router.put("/publicacion/:id", (req, res) => {
+    const { id } = req.params;
+    const { descripcion, categoria } = req.body;
+  
+    publicacionSchema
+      .updateOne({ _id: id }, { $set: { descripcion, categoria } })
+      .then((data) => res.json(data))
+      .catch((error) => res.status(400).json({ message: error }));
+  });
+  
+
 
 router.delete("/publicacion/:id", (req, res) => {
     const { id } = req.params;
