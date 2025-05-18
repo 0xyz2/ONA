@@ -8,7 +8,7 @@ const reporteSchema = mongoose.Schema({
     required: true
   },
 
-  motivo: {
+  motivoReporte: {
     type: String,
     required: true
   },

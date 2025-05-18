@@ -5,7 +5,7 @@ const Publicacion = require("../models/publicacion");
 
 // Ruta para crear un reporte 
 router.post("/reportar", async (req, res) => {
-  const { publicacionId, motivo, reportadoPor } = req.body;
+  const { publicacionId, motivoReporte, reportadoPor } = req.body;
 
   try {
     const publicacion = await Publicacion.findById(publicacionId);
@@ -15,7 +15,7 @@ router.post("/reportar", async (req, res) => {
 
     const nuevoReporte = new Reporte({
       publicacionId,
-      motivo,
+      motivoReporte,
       reportadoPor
     });
 
