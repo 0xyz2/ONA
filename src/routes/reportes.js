@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const Reporte = require("../models/reporte");
+const Reporte = require("../models/reportes");
 const Publicacion = require("../models/publicacion");
 
 // Ruta para crear un reporte 
