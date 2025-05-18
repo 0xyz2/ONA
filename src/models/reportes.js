@@ -1,8 +1,8 @@
 const mongoose = require("mongoose");
 
 const reporteSchema = mongoose.Schema({
-    
-    publicacionId: {
+
+  publicacionId: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "Publicacion",
     required: true
@@ -18,7 +18,7 @@ const reporteSchema = mongoose.Schema({
     required: true
   },
 
-   fecha: {
+  fecha: {
     type: Date,
     default: Date.now
   },

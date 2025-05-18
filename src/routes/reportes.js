@@ -3,7 +3,6 @@ const router = express.Router();
 const Reporte = require("../models/reportes");
 const Publicacion = require("../models/publicacion");
 
-// ✅ Crear un nuevo reporte
 router.post("/reportar", async (req, res) => {
   const { publicacionId, motivoReporte, reportadoPor } = req.body;
 
@@ -27,7 +26,7 @@ router.post("/reportar", async (req, res) => {
   }
 });
 
-// ✅ Obtener todos los reportes
+
 router.get("/reportes", async (req, res) => {
   try {
     const reportes = await Reporte.find().populate("publicacionId");
@@ -37,7 +36,6 @@ router.get("/reportes", async (req, res) => {
   }
 });
 
-// ✅ Actualizar motivo del reporte
 router.put("/reportes/:id", async (req, res) => {
   const { id } = req.params;
   const { motivoReporte } = req.body;
@@ -60,7 +58,7 @@ router.put("/reportes/:id", async (req, res) => {
   }
 });
 
-// ✅ Eliminar un reporte
+
 router.delete("/reportes/:id", async (req, res) => {
   const { id } = req.params;
 
