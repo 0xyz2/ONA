@@ -4,7 +4,6 @@ const publicacionSchema = mongoose.Schema({
   usuario: {
     type: String,
     required: true,
-    unique: true,
   },
   fecha: {
     type: Date,
