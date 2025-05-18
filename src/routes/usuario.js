@@ -28,8 +28,13 @@ router.put("/usuarios/:id", (req, res) => {
         .catch((error) => res.json({ message: error }));
 });
 
-
-
+router.delete("/usuarios/:id", (req, res) => {
+    const { id } = req.params;
+    userSchema
+      .findByIdAndDelete(id)
+      .then((data) => res.json(data))
+      .catch((error) => res.json({ message: error }));
+  });
 
 
 module.exports = router;
