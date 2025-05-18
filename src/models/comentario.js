@@ -4,16 +4,20 @@ const ComentarioSchema = mongoose.Schema({
   usuario: {
     type: String,
     required: true,
-    unique: true,
   },
   fecha: {
     type: Date,
-    required: true
+    default: Date.now
   },
   descripcion: {
     type: String,
     required: true,
   },
-  
+  publicacionId: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "Publicacion",
+    required: true
+  }
 });
+
 module.exports = mongoose.model("Comentarios", ComentarioSchema);
