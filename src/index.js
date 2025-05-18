@@ -9,7 +9,7 @@ const port = process.env.PORT || 3000;
 const usuarioRoutes = require('./routes/usuario');
 const reporteRoutes = require("./routes/reportes");
 const publicacionRoutes = require('./routes/publicacion');
-
+const comentariosRoutes = require("./routes/comentarios");
 // Middlewares
 app.use(express.json()); // Para leer JSON en las peticiones
 
@@ -17,6 +17,7 @@ app.use(express.json()); // Para leer JSON en las peticiones
 app.use('/api', usuarioRoutes);
 app.use("/api/reportes", reporteRoutes);
 app.use("/api/publicacion", publicacionRoutes);
+app.use("/api", comentariosRoutes);
 
 // Conexión a MongoDB
 mongoose
