@@ -14,7 +14,7 @@ app.use(express.json()); // Para leer JSON en las peticiones
 
 // Usar las rutas
 app.use('/api', usuarioRoutes);
-app.use("/api/", reporteRoutes);
+app.use("/api/reportes", reporteRoutes);
 
 // Conexión a MongoDB
 mongoose
