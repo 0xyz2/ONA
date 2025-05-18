@@ -7,12 +7,14 @@ const port = process.env.PORT || 3000;
 
 // Importar rutas
 const usuarioRoutes = require('./routes/usuario');
+const reporteRoutes = require("./routes/reporte");
 
 // Middlewares
 app.use(express.json()); // Para leer JSON en las peticiones
 
 // Usar las rutas
 app.use('/api', usuarioRoutes);
+app.use("/api/reportes", reporteRoutes);
 
 // Conexión a MongoDB
 mongoose
@@ -29,3 +31,4 @@ app.get('/', (req, res) => {
 app.listen(port, () => {
   console.log('La aplicación se está ejecutando por el puerto ' + port);
 });
+
