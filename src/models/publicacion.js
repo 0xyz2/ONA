@@ -16,7 +16,7 @@ const publicacionSchema = mongoose.Schema({
   },
   categoria: {
     type: String,
-    enum: ["moda", "salud ", "estudio", "tecnología", "política"]
+    enum: ["moda", "salud", "estudio", "tecnología", "política"]
   }
 });
 module.exports = mongoose.model("Publicacion", publicacionSchema);

@@ -2,16 +2,17 @@ const express = require("express");
 const router = express.Router();
 const publicacionSchema = require("../models/publicacion");
 
-router.post("/publicacion", (req, res) => {
+router.post("/", (req, res) => {
   const publicacion = new publicacionSchema(req.body);
-  user
+  publicacion
     .save()
     .then((data) => res.json(data))
     .catch((error) => res.status(400).json({ message: error }));
 });
 
 router.get("/publicaciones/categoria/:categoria", (req, res) => {
-    const { categoria } = req.query;
+    const { categoria } = req.params;
+
 
     const filtro = categoria ? { categoria } : {};
 
