@@ -8,7 +8,7 @@ const publicacionSchema = mongoose.Schema({
   },
   fecha: {
     type: Date,
-    required: true
+    default: Date.now
   },
   descripcion: {
     type: String,
