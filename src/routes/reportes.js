@@ -3,7 +3,7 @@ const router = express.Router();
 const Reporte = require("../models/reportes");
 const Publicacion = require("../models/publicacion");
 
-// Ruta para crear un reporte 
+// ✅ Crear un nuevo reporte
 router.post("/reportar", async (req, res) => {
   const { publicacionId, motivoReporte, reportadoPor } = req.body;
 
@@ -24,6 +24,56 @@ router.post("/reportar", async (req, res) => {
 
   } catch (error) {
     res.status(500).json({ mensaje: "Error al crear el reporte", error });
+  }
+});
+
+// ✅ Obtener todos los reportes
+router.get("/reportes", async (req, res) => {
+  try {
+    const reportes = await Reporte.find().populate("publicacionId");
+    res.json(reportes);
+  } catch (error) {
+    res.status(500).json({ mensaje: "Error al obtener reportes", error });
+  }
+});
+
+// ✅ Actualizar motivo del reporte
+router.put("/reportes/:id", async (req, res) => {
+  const { id } = req.params;
+  const { motivoReporte } = req.body;
+
+  try {
+    const reporteActualizado = await Reporte.findByIdAndUpdate(
+      id,
+      { motivoReporte },
+      { new: true }
+    );
+
+    if (!reporteActualizado) {
+      return res.status(404).json({ mensaje: "Reporte no encontrado" });
+    }
+
+    res.json({ mensaje: "Reporte actualizado", reporte: reporteActualizado });
+
+  } catch (error) {
+    res.status(500).json({ mensaje: "Error al actualizar reporte", error });
+  }
+});
+
+// ✅ Eliminar un reporte
+router.delete("/reportes/:id", async (req, res) => {
+  const { id } = req.params;
+
+  try {
+    const reporteEliminado = await Reporte.findByIdAndDelete(id);
+    if (!reporteEliminado) {
+      return res.status(404).json({ mensaje: "Reporte no encontrado" });
+    }
+
+    res.json({ mensaje: "Reporte eliminado correctamente", reporte: reporteEliminado });
+
+  } catch (error) {
+    res.status(500).json({ mensaje: "Error al eliminar reporte", error });
   }
 });
 
