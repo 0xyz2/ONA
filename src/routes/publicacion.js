@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const publicacionSchema = require("../models/publicacion");
 
-router.post("/", (req, res) => {
+router.post("/publicacion", (req, res) => {
   const publicacion = new publicacionSchema(req.body);
   publicacion
     .save()
